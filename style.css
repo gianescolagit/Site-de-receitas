@@ -1,54 +1,123 @@
-body {
-    font-family: Arial, sans-serif;
+/* Resetando estilos para garantir consistência */
+* {
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Corpo principal */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
 header {
-    background-color: #ff6600;
+    background-color: #f05a28;
     color: white;
-    padding: 15px;
+    padding: 30px 0;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
 }
 
 header input, header select {
-    padding: 8px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 5px;
+    width: 250px;
 }
 
+/* Cards de receitas */
 #recipesContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
 }
 
 .recipe-card {
     background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
 }
 
 .recipe-card h3 {
-    margin: 10px 0;
+    font-size: 1.6rem;
+    color: #f05a28;
+    margin-bottom: 15px;
 }
 
-button {
-    background-color: #ff6600;
+.recipe-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.recipe-card button {
+    background-color: #f05a28;
     color: white;
-    padding: 8px 12px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #e55d00;
+.recipe-card button:hover {
+    background-color: #e0471e;
+}
+
+/* Formulário de adição de receita */
+#addRecipe {
+    background-color: #fff;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#addRecipe h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f05a28;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #f05a28;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e0471e;
 }
 
 /* Modal */
@@ -59,19 +128,43 @@ button:hover {
     left: 0; top: 0;
     width: 100%; height: 100%;
     background: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
     background: white;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
     width: 80%;
-    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#modalTitle {
+    font-size: 1.8rem;
+    color: #f05a28;
+    margin-bottom: 15px;
+}
+
+#modalIngredients {
+    margin-bottom: 20px;
+}
+
+#modalIngredients li {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+#modalInstructions {
+    font-size: 1rem;
 }
 
 #closeModal {
-    float: right;
-    font-size: 24px;
+    font-size: 2rem;
+    color: #f05a28;
     cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }

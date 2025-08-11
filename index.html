@@ -1,47 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas Deliciosas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Foodfy</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🍽 Receitas Deliciosas</h1>
-        <input type="text" id="search" placeholder="Buscar receitas...">
-        <select id="filterCategory">
-            <option value="all">Todas as categorias</option>
-            <option value="sobremesa">Sobremesa</option>
-            <option value="massa">Massa</option>
-            <option value="carne">Carne</option>
-        </select>
-    </header>
+    <div class="container">
+        <header>
+            <a href="./index.html">
+                <img src="./assets/logo.png" alt="Logo Foodfy" />
+            </a>
+            <div class = "links">
+                <a href="sobre.html">Sobre</a>
+                <a href="receitas.html">Receitas</a>
+            </div>
+        </header>
+    </div>
+    
 
-    <main id="recipesContainer"></main>
+    <div id="wrapper">
 
-    <section id="addRecipe">
-        <h2>Adicionar Nova Receita</h2>
-        <form id="recipeForm">
-            <input type="text" id="recipeTitle" placeholder="Título" required>
-            <input type="text" id="recipeCategory" placeholder="Categoria" required>
-            <textarea id="recipeIngredients" placeholder="Ingredientes (separados por vírgula)" required></textarea>
-            <textarea id="recipeInstructions" placeholder="Modo de preparo" required></textarea>
-            <button type="submit">Adicionar Receita</button>
-        </form>
-    </section>
-
-    <div id="recipeModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal">&times;</span>
-            <h2 id="modalTitle"></h2>
-            <h3>Ingredientes:</h3>
-            <ul id="modalIngredients"></ul>
-            <h3>Modo de Preparo:</h3>
-            <p id="modalInstructions"></p>
+        <div class="info">
+            <h1>As melhores receitas</h1>
+            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
         </div>
+
+        <img src="assets/chef.png" alt="Foodfy">
+
     </div>
 
-    <script src="app.js"></script>
+    <div class="mais_acessadas">
+        <h1 id="title">Mais acessadas</h1>
+    </div>
+
+    <section class="recipes">
+
+        <div class="card" id="burger">
+            <div class="recipe_image-container">
+               <img src="assets/burger.png" alt="burguer">
+            </div>
+            <div class="recipe_info">
+                <p class="nome">Triplo bacon burger</p>
+                <p class="chef">por Jorge Relato</p>
+            </div>
+        </div>
+
+        <div class="card" id="pizza">
+            <div class="recipe_image-container">
+               <img src="assets/pizza.png" alt="pizza">
+            </div>
+            <div class="recipe_info">
+                <p class="nome">Pizza 4 estações</p>
+                <p class="chef">por Faciana Melo</p>
+            </div>
+        </div>
+
+        <div class="card" id="espaguete">
+            <div class="recipe_image-container">
+               <img src="assets/espaguete.png" alt="espaguete">
+            </div>
+            <div class="recipe_info">
+                <p class="nome">Espaguete ao alho</p>
+                <p class="chef">por Júlia Kinoto</p>
+            </div>
+        </div>
+
+        <div class="card" id="lasanha">
+            <div class="recipe_image-container">
+               <img src="assets/lasanha.png" alt="lasanha">
+            </div>
+            <div class="recipe_info">
+                <p class="nome">Lasanha mac n' cheese</p>
+                <p class="chef">por Juliano Vieira</p>
+            </div>
+        </div>
+
+        <div class="card" id="doce">
+            <div class="recipe_image-container">
+               <img src="assets/doce.png" alt="doce">
+            </div>
+            <div class="recipe_info">
+                <p class="nome">Docinho pão-do-céu</p>
+                <p class="chef">por Rirecipeo Golvea</p>
+            </div>
+        </div>
+
+        <div class="card" id="asinhas">
+            <div class="recipe_image-container">
+               <img src="assets/asinhas.png" alt="asinhas">
+            </div>
+            <div class="recipe_info">
+                <p class="nome">Asinhas de frango ao barbecue</p>
+                <p class="chef">por Vania Steroski</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Todos os direitos reservados, Foodfy receitas.</p>
+    </footer>
+
+    <div class="modal_overlay">
+
+        <div class="modal">
+
+            <div class="modal_image-container">
+                <img src="assets/burger.png">
+            </div>
+
+            <div class="modal_content">
+                <h1 class="nome"></h1>
+                <p class="chef"></p>
+            </div>
+
+            <a class="modal_close">
+                <P>Fechar modal</P>
+            </a>
+
+
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+    
 </body>
+
 </html>

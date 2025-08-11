@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas Deliciosas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🍽 Receitas Deliciosas</h1>
+        <input type="text" id="search" placeholder="Buscar receitas...">
+        <select id="filterCategory">
+            <option value="all">Todas as categorias</option>
+            <option value="sobremesa">Sobremesa</option>
+            <option value="massa">Massa</option>
+            <option value="carne">Carne</option>
+        </select>
+    </header>
+
+    <main id="recipesContainer"></main>
+
+    <section id="addRecipe">
+        <h2>Adicionar Nova Receita</h2>
+        <form id="recipeForm">
+            <input type="text" id="recipeTitle" placeholder="Título" required>
+            <input type="text" id="recipeCategory" placeholder="Categoria" required>
+            <textarea id="recipeIngredients" placeholder="Ingredientes (separados por vírgula)" required></textarea>
+            <textarea id="recipeInstructions" placeholder="Modo de preparo" required></textarea>
+            <button type="submit">Adicionar Receita</button>
+        </form>
+    </section>
+
+    <!-- Modal de detalhes -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <h3>Ingredientes:</h3>
+            <ul id="modalIngredients"></ul>
+            <h3>Modo de Preparo:</h3>
+            <p id="modalInstructions"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

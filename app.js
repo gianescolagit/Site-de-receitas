@@ -5,6 +5,7 @@ let recipes = [
     { title: "Bife Grelhado", category: "carne", ingredients: ["bife", "sal", "pimenta"], instructions: "Tempere e grelhe o bife." }
 ];
 
+// Elementos da interface
 const recipesContainer = document.getElementById("recipesContainer");
 const searchInput = document.getElementById("search");
 const filterCategory = document.getElementById("filterCategory");
@@ -43,15 +44,20 @@ function showDetails(title) {
         modalTitle.textContent = recipe.title;
         modalIngredients.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join("");
         modalInstructions.textContent = recipe.instructions;
-        modal.style.display = "block";
+        modal.style.display = "flex";
     }
 }
 
+// Fechar o modal
 closeModal.onclick = () => modal.style.display = "none";
-window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+};
 
-// Adicionar receita
-recipeForm.addEventListener("submit", e => {
+// Adicionar nova receita
+recipeForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const newRecipe = {
         title: document.getElementById("recipeTitle").value,
@@ -68,5 +74,6 @@ recipeForm.addEventListener("submit", e => {
 searchInput.addEventListener("input", renderRecipes);
 filterCategory.addEventListener("change", renderRecipes);
 
-// Inicialização
+// Inicializar a lista de receitas ao carregar a página
 renderRecipes();
+

@@ -1,170 +1,232 @@
-/* Resetando estilos para garantir consistência */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    border: 0;
 }
 
-/* Corpo principal */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fafafa;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
-/* Cabeçalho */
-header {
-    background-color: #f05a28;
-    color: white;
-    padding: 30px 0;
+.container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+header{
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 940px;    
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: 30px;
 }
 
-header h1 {
-    font-size: 2.5rem;
+header img{
+    size: 90.6px;
+    height: 26.9;
+    margin-top: 37px;
+    margin-right: 122.4px;
 }
 
-header input, header select {
-    padding: 12px;
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    margin: 10px 5px;
-    width: 250px;
+.links{
+    margin-top: 38px;
 }
 
-/* Cards de receitas */
-#recipesContainer {
+.links a{
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    font-size: 16px;
+    width: 42px;
+    margin: 0 15px;
+}
+
+.links a.active {
+    font-weight: bold;
+}
+
+.links a:hover{
+    font-weight: bold;
+}
+
+
+/*=== WRAPPER ===*/
+
+#wrapper{
+    display: flex;
+    background-color: #FBDFDB;
+    max-width: 940px;
+    height: 366px;
+    margin: 0 auto;
+    margin-top: 36px;
+    border-radius: 30px;
+}
+
+#wrapper .info{
+    margin-top: 117px;
+    margin-left: 60px;
+    text-align: left;
+    line-height: 28px;
+}
+
+#wrapper .info h1{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#wrapper .info p{
+    width: 316px;
+    height: 84px;
+    font-size: 18px;
+    opacity: 0.7;
+    
+}
+
+#wrapper img{
+    width: 216px;
+    height: 300px;
+    margin-top: 66px;
+    margin-right: 100px;
+    margin-left: 259px;
+}
+
+.about{    
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.about h1{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+.about h2{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.about p{
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+/* === CARDS === */
+
+#title{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-right: 765px;
+}
+
+.recipes{
+    max-width: 940px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    gap: 30px;
 }
 
-.recipe-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    overflow: hidden;
+.recipe_image-container img{
+    width: 300px;
+    height: 140px;
+    border-radius: 15px;
 }
 
-.recipe-card:hover {
-    transform: translateY(-10px);
+.card .info .nome{
+    font-size: 18px;
 }
 
-.recipe-card h3 {
-    font-size: 1.6rem;
-    color: #f05a28;
-    margin-bottom: 15px;
+.card .recipe_info .chef{
+    font-size: 14px;
+    color: #777777
 }
-
-.recipe-card p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-.recipe-card button {
-    background-color: #f05a28;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+.card:hover{
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.recipe-card button:hover {
-    background-color: #e0471e;
+footer{
+    margin-top: 50px;
+    height: 62px;
+    background-color: #EEEEEE;
+    
 }
 
-/* Formulário de adição de receita */
-#addRecipe {
-    background-color: #fff;
-    padding: 30px;
-    margin: 50px auto;
-    border-radius: 10px;
-    max-width: 800px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-#addRecipe h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+footer p{
+    font-size: 14px;
+    line-height: 6.5vh;
     text-align: center;
-    color: #f05a28;
+    color: #999999;
 }
 
-form input, form textarea, form button {
+
+/* === MODAL === */
+
+.modal_overlay{
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-}
-
-form button {
-    background-color: #f05a28;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #e0471e;
-}
-
-/* Modal */
-.modal {
-    display: none;
+    height: 100%;
     position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    align-items: center;
-    justify-content: center;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 600px;
-    width: 80%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+.modal{
+    background-color: white;
+    border-radius: 16px;
+    width: 660px;
+    height: 413px;
+    margin: 27vh auto;
+    position: relative;
 }
 
-#modalTitle {
-    font-size: 1.8rem;
-    color: #f05a28;
-    margin-bottom: 15px;
+.modal_image-container img{
+    margin: 30px;
+    width: 600px;
+    height: 200px;
+    border-radius: 15px; 
 }
 
-#modalIngredients {
-    margin-bottom: 20px;
+.modal_content{
+    text-align: center;
 }
 
-#modalIngredients li {
-    font-size: 1rem;
-    margin: 5px 0;
+.modal_content .nome{
+    font-size: 24px;
 }
 
-#modalInstructions {
-    font-size: 1rem;
+.modal_content .chef{
+    font-size: 18px;
+    color: #777777;
 }
 
-#closeModal {
-    font-size: 2rem;
-    color: #f05a28;
+.modal_close{
+    text-align: center;
+}
+
+.modal_close:hover{
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
+}
+
+.modal_close p{
+    color: #999999;
+    margin-top: 60px;
+}
+
+
+/* === MODAL ACTIVE === */
+
+.modal_overlay.active{
+    opacity: 1;
+    visibility: visible;
 }
